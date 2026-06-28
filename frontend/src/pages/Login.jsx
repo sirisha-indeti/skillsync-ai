@@ -12,7 +12,7 @@ function Login({ onSwitchToRegister, onLoginSuccess }) {
     e.preventDefault()
     if (formData.email && formData.password) {
       setMessage('Login successful')
-      onLoginSuccess()
+      onLoginSuccess({ name: 'SkillSync User', email: formData.email, role: 'Member' })
     } else {
       setMessage('Please fill in all fields')
     }

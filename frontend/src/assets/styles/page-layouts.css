@@ -1,0 +1,154 @@
+.dashboard-grid,
+.ai-grid,
+.workspace-grid,
+.projects-section,
+.notifications-list,
+.tasks-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-grid,
+.ai-grid,
+.workspace-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.dashboard-panel,
+.ai-box,
+.board-column,
+.notification-item,
+.task-row,
+.project-card,
+.project-row,
+.stat-box,
+.profile-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.recent-project-list,
+.project-table,
+.task-table,
+.notifications-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.recent-project-item,
+.board-card,
+.member-card,
+.notification-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-row.completed {
+  opacity: 0.75;
+  text-decoration: line-through;
+}
+
+.task-actions button,
+.project-form button,
+.ai-box button,
+.settings-form button,
+.notification-item button,
+.auth-form button,
+.link-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+.task-form input,
+.task-form textarea,
+.settings-form input,
+.settings-form select,
+.project-form input,
+.project-form textarea,
+.auth-form input,
+.ai-box textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: white;
+}
+
+.workspace-grid {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.team-board {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.board-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.member-card,
+.board-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.notification-item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.notification-item.read {
+  opacity: 0.75;
+}
+
+.settings-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.settings-form label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.profile-box {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .app-shell {
+    padding: 0 1rem;
+  }
+
+  .workspace-grid,
+  .dashboard-grid,
+  .ai-grid,
+  .team-board {
+    grid-template-columns: 1fr;
+  }
+}

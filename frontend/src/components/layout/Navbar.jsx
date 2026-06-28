@@ -1,19 +1,36 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-function Navbar({ currentPage, onNavigate, onLogout }) {
+function Navbar({ onLogout }) {
+  const navClass = ({ isActive }) => (isActive ? 'nav-btn active' : 'nav-btn')
+
   return (
     <nav className="navbar">
       <div className="brand">SkillSync AI</div>
       <div className="nav-links">
-        <button className={currentPage === 'dashboard' ? 'nav-btn active' : 'nav-btn'} onClick={() => onNavigate('dashboard')}>
+        <NavLink className={navClass} to="/dashboard">
           Dashboard
-        </button>
-        <button className={currentPage === 'projects' ? 'nav-btn active' : 'nav-btn'} onClick={() => onNavigate('projects')}>
+        </NavLink>
+        <NavLink className={navClass} to="/projects">
           Projects
-        </button>
-        <button className={currentPage === 'profile' ? 'nav-btn active' : 'nav-btn'} onClick={() => onNavigate('profile')}>
+        </NavLink>
+        <NavLink className={navClass} to="/tasks">
+          Tasks
+        </NavLink>
+        <NavLink className={navClass} to="/ai">
+          AI
+        </NavLink>
+        <NavLink className={navClass} to="/workspace">
+          Workspace
+        </NavLink>
+        <NavLink className={navClass} to="/notifications">
+          Notifications
+        </NavLink>
+        <NavLink className={navClass} to="/settings">
+          Settings
+        </NavLink>
+        <NavLink className={navClass} to="/profile">
           Profile
-        </button>
+        </NavLink>
         <button className="nav-btn logout-btn" onClick={onLogout}>
           Logout
         </button>

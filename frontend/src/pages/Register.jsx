@@ -12,7 +12,7 @@ function Register({ onSwitchToLogin, onRegisterSuccess }) {
     e.preventDefault()
     if (formData.name && formData.email && formData.password) {
       setMessage('Registration successful')
-      onRegisterSuccess()
+      onRegisterSuccess({ name: formData.name, email: formData.email, role: 'Member' })
     } else {
       setMessage('Please fill in all fields')
     }

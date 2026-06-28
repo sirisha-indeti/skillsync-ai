@@ -3,14 +3,11 @@ import CreateProject from '../components/projects/CreateProject.jsx'
 import ProjectCard from '../components/projects/ProjectCard.jsx'
 import ProjectTable from '../components/projects/ProjectTable.jsx'
 
-function Projects() {
-  const [projects, setProjects] = useState([
-    { id: 1, title: 'AI Resume Matching', description: 'Improve candidate screening with AI.' },
-    { id: 2, title: 'Team Skill Mapping', description: 'Visualize team strengths and gaps.' },
-  ])
+function Projects({ projects, onCreate }) {
+  const [formData, setFormData] = useState({ title: '', description: '' })
 
   const handleCreateProject = (newProject) => {
-    setProjects([newProject, ...projects])
+    onCreate(newProject)
   }
 
   return (

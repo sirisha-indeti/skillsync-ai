@@ -1,9 +1,18 @@
 import express from 'express';
-import { getUsers, getUserById } from '../controllers/userController.js';
+import {
+  getUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+} from '../controllers/userController.js';
+import { protect, restrictTo } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.get('/', getUsers);
+router.use(protect);
+router.get('/', restrictTo('admin'), getUsers);
 router.get('/:id', getUserById);
+router.patch('/:id', restrictTo('admin', 'manager'), updateUser);
+router.delete('/:id', restrictTo('admin'), deleteUser);
 
 export default router;
